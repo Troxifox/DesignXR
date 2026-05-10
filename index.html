@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XR Toon Tutor</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <aside class="panel left-panel">
+        <p class="eyebrow">Immersive Learning</p>
+        <h1>XR Toon Tutor</h1>
+        <p class="intro">
+          An immersive classroom where learners explore a character-led 3D scene, hear guided explanations,
+          and complete quick activities.
+        </p>
+
+        <section class="controls">
+          <div class="section-title">
+            <span>Scene Controls</span>
+            <button id="resetBtn" class="icon-btn" type="button" title="Reset scene" aria-label="Reset scene">↻</button>
+          </div>
+
+          <label class="field">
+            <span>Lesson</span>
+            <select id="lessonSelect">
+              <option value="scale">Scale & Distance</option>
+              <option value="color">Color Theory</option>
+              <option value="lighting">Lighting & Shadows</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Immersion Depth</span>
+            <input id="depthSlider" type="range" min="0" max="100" value="55" />
+          </label>
+
+          <div class="switches">
+            <label><input id="voiceToggle" type="checkbox" checked /> Voiceover</label>
+            <label><input id="labelsToggle" type="checkbox" checked /> Labels</label>
+          </div>
+
+          <div class="actions">
+            <button id="startBtn" type="button">Start Lesson</button>
+            <button id="xrBtn" type="button">Focus Mode</button>
+          </div>
+        </section>
+
+        <section class="activity">
+          <div class="section-title">
+            <span>Activity</span>
+            <strong id="score">0/3</strong>
+          </div>
+          <p id="question">Press Start Lesson to begin the activity.</p>
+          <div id="answers" class="answers"></div>
+        </section>
+      </aside>
+
+      <section class="stage">
+        <div class="topbar">
+          <div class="live">
+            <span class="pulse"></span>
+            <span id="status">Ready for immersive lesson</span>
+          </div>
+          <span>Desktop · Mobile · Headset</span>
+        </div>
+
+        <div id="viewport" class="viewport">
+          <canvas id="sceneCanvas" width="1200" height="760"></canvas>
+          <div class="label label-character">Character Guide</div>
+          <div class="label label-prop">Learning Object</div>
+          <div class="label label-space">Classroom Space</div>
+          <div class="reticle"></div>
+        </div>
+
+        <div class="cards">
+          <article>
+            <span>Problem</span>
+            <p>Students often struggle to understand spatial concepts from flat slides and static diagrams.</p>
+          </article>
+          <article>
+            <span>Solution</span>
+            <p>An immersive lesson with a character guide, interactive scene, voiceover, and short activities.</p>
+          </article>
+          <article>
+            <span>Outcome</span>
+            <p>Learners can observe, compare, and check understanding through short guided tasks.</p>
+          </article>
+        </div>
+      </section>
+
+      <aside class="panel right-panel">
+        <section>
+          <h2>Guide</h2>
+          <p id="guideText">Choose a lesson to show guidance for the learner.</p>
+        </section>
+
+        <section>
+          <h2>Project Info</h2>
+          <dl>
+            <div>
+              <dt>Project Title</dt>
+              <dd>XR Toon Tutor</dd>
+            </div>
+            <div>
+              <dt>Target Users</dt>
+              <dd>Students, teachers, design beginners, remote classrooms.</dd>
+            </div>
+            <div>
+              <dt>Tech Stack</dt>
+              <dd>HTML, CSS, JavaScript, Canvas 3D simulation, Web Speech API.</dd>
+            </div>
+            <div>
+              <dt>Category</dt>
+              <dd>Education, immersive learning, classroom training.</dd>
+            </div>
+          </dl>
+        </section>
+      </aside>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
